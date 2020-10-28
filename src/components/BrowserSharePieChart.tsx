@@ -3,7 +3,7 @@ import * as React from 'react';
 
 // @visx imports
 import { scaleOrdinal } from '@visx/scale';
-import Pie, { ProvidedProps, PieArcDatum } from '@visx/shape/lib/shapes/Pie';
+import Pie from '@visx/shape/lib/shapes/Pie';
 
 import { Group } from '@visx/group';
 import { GradientPinkBlue } from '@visx/gradient';
@@ -36,6 +36,7 @@ console.table(browsers);
 
 // data accessor function
 const usage = (d: BrowserUsage) => d.usage;
+// const label = (d: BrowserUsage) => d.label;
 
 // define color scale for your data
 const getBrowserColor = scaleOrdinal({
@@ -72,7 +73,7 @@ function BrowserSharePieChart({ width, height }: PieProps) {
   const centerY = innerHeight / 2;
   const centerX = innerWidth / 2;
   // size the donut hole
-  const donutThickness = 75;
+  const donutThickness = 25;
 
   return (
     <svg width={width} height={height}>
